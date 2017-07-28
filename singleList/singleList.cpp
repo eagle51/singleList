@@ -71,6 +71,29 @@ int insert(PNode pHead, int pos, int val)
 	return 0;
 }
 
+int insert2(PNode pHead, int pos, int val)
+{
+	PNode pIns = pHead;
+	PNode pLen = pHead;
+	int len = 0;
+	while (pLen->next != NULL){
+		pLen = pLen->next;
+		len++;
+	}
+	if (pos < 1 || pos >len + 1){
+		printf("insert failed!\n");
+		return -1;
+	}
+	else {
+		for (int i = 1;i < pos;++i)
+			pIns = pIns->next;
+		PNode pNew = (PNode)malloc(sizeof(Node));
+		pNew->data = val;
+		pNew->next = pIns->next;
+		pIns->next = pNew;
+	}
+	return 0;
+}
 int del(PNode pHead, int pos)
 {
 	PNode pLen = pHead;

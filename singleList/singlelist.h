@@ -9,6 +9,7 @@ PNode createList(int n);
 void traverse(PNode pHead);
 int length(PNode pHead);
 int insert(PNode pHead,int pos,int val);
+int insert2(PNode pHead, int pos, int val);
 int del(PNode pHead, int  pos);
 PNode locate(PNode pHead, int value);//按元素值查找
 PNode get(PNode pHead, int k);//按序号查找
